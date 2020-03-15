@@ -1,0 +1,23 @@
+{
+  "name": "richlab-blog",
+  "version": "0.0.1",
+  "description": "RichLab&#39;s Blog.",
+  "main": "index.js",
+  "authors": {
+    "name": "完颜",
+    "email": "wanyan.wz@antfin.com"
+  },
+  "repository": "/richlab-blog",
+  "scripts": {
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@vuepress-reco/vuepress-plugin-comments": "^1.0.13",
+    "@vuepress/plugin-back-to-top": "^1.0.0",
+    "@vuepress/plugin-medium-zoom": "^1.0.0",
+    "vuepress": "^1.0.0",
+    "vuepress-plugin-comment": "^0.7.3"
+  }
+}
