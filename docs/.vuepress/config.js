@@ -86,6 +86,18 @@ module.exports = {
         appKey: 'AYI4KeXQloUWsuebDElj8A67',
       }
     }],
-    require('./vuepress-plugin-dynamic-public-path')
+    [
+      require('./vuepress-plugin-dynamic-base'),
+      {
+        publicPath: process.env.NETLIFY_CI
+          ? null
+          : 'https://richlab.oss-cn-hangzhou.aliyuncs.com/',
+
+        routeBash: {
+          'richlab.design': '/',
+          'rich-lab.github.io': '/blog/',
+        }
+      }
+    ]
   ]
 }

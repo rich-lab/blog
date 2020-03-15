@@ -30,7 +30,7 @@
       if (sidebarEls.length > 0) {
         const sidebarEl = sidebarEls[0]
         const targetLink = sidebarEl.querySelector('.active.sidebar-link')
-        targetLink.scrollIntoView({
+        targetLink && targetLink.scrollIntoView({
           behavior: 'smooth'
         })
       }

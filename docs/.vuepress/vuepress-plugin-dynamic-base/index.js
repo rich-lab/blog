@@ -6,7 +6,17 @@
 const { join } = require('path')
 
 module.exports = (options = {}, ctx) => {
+  let { publicPath, routeBash } = options
+  publicPath = ctx.isProd && typeof publicPath === 'string'
+    ? publicPath
+    : false
+
   return {
+    define: {
+      PUBLIC_PATH: publicPath,
+      ROUTE_BASE: routeBash,
+    },
+
     enhanceAppFiles: [
       join(__dirname, 'enhanceApp.js')
     ],
@@ -14,14 +24,12 @@ module.exports = (options = {}, ctx) => {
     chainWebpack(config) {
       config
         .entry('app')
-        .prepend(join(__dirname, 'basement-entry.js'))
+        .prepend(join(__dirname, 'prepended-entry.js'))
         .end()
 
-      // 生产固定静态资源的前缀
-      const publicPath = ctx.isProd
-        ? 'https://richlab.oss-cn-hangzhou.aliyuncs.com/'
-        : undefined;
-
+      /**
+       * Only apply publicPath at production.
+       */
       if (publicPath) {
         config.output.publicPath(publicPath);
       }
