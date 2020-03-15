@@ -87,6 +87,7 @@
       display flex
       justify-content center
       align-items center
+      float right
       
       &:hover {
         background $colorLight
