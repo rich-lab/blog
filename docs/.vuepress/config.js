@@ -49,6 +49,14 @@ module.exports = {
       {
         text: 'Blog',
         link: '/blog/'
+      },
+      {
+        text: 'Github',
+        link: 'https://github.com/rich-lab'
+      },
+      {
+        text: 'Artworks',
+        link: 'https://github.com/rich-lab/art/'
       }
     ],
     sidebar: {
