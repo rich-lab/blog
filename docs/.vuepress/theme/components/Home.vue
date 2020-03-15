@@ -87,7 +87,9 @@
       display flex
       justify-content center
       align-items center
-      float right
+      @media (min-width: $MQMobile) {
+        float right
+      }
       
       &:hover {
         background $colorLight
