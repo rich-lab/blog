@@ -85,6 +85,7 @@ module.exports = {
         appId: 'yPsaft2cSPtwnXW6UiXBS4ld-gzGzoHsz',
         appKey: 'AYI4KeXQloUWsuebDElj8A67',
       }
-    }]
+    }],
+    require('./vuepress-plugin-dynamic-public-path')
   ]
 }

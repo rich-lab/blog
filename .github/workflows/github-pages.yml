@@ -15,6 +15,19 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      # 切代码到 runner
+      - uses: actions/checkout@v1
+        with:
+          submodules: true
+      # 下载 git submodule
+      - uses: srt32/git-actions@v0.0.3
+        with:
+          args: git submodule update --init --recursive
+      # 使用 node:10
+      - name: use Node.js 10.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 10.x
       - uses: actions/checkout@master
       - name: Vuepress to GitHub Pages
         uses: testthedocs/github-pages-deploy-action@0.0.2
@@ -22,3 +35,12 @@ jobs:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           BUILD_DIR: docs/.vuepress/dist # The folder, the action should deploy.
           BUILD_SCRIPT: yarn && yarn build # The build script the action should run prior to deploying.
+      # 设置阿里云OSS的 id/secret，存储到 github 的 secrets 中
+      - name: setup aliyun oss
+        uses: manyuanrong/setup-ossutil@master
+        with:
+          endpoint: oss-cn-hangzhou.aliyuncs.com
+          access-key-id: ${{ secrets.OSS_KEY_ID }}
+          access-key-secret: ${{ secrets.OSS_KEY_SECRET }}
+      - name: cp files to aliyun
+        run: ossutil cp -rf docs/.vuepress/dist oss://richlab/
