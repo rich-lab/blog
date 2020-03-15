@@ -19,7 +19,7 @@ module.exports = (options = {}, ctx) => {
 
       // 生产固定静态资源的前缀
       const publicPath = ctx.isProd
-        ? 'https://richlab.oss-cn-hangzhou.aliyuncs.com'
+        ? 'https://richlab.oss-cn-hangzhou.aliyuncs.com/'
         : undefined;
 
       if (publicPath) {
