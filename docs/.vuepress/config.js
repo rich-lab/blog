@@ -79,8 +79,6 @@ module.exports = {
   plugins: [
     '@vuepress/plugin-back-to-top',
     '@vuepress/plugin-medium-zoom',
-    // workaround SSR mismatch
-    'dehydrate',
     ['@vuepress-reco/comments', {
       solution: 'valine',
       options: {
