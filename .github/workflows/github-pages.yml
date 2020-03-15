@@ -4,11 +4,7 @@ name: CI
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
-on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+on: [push]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -19,11 +15,10 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - name: Checkout
-        uses: actions/checkout@master
+      - uses: actions/checkout@master
       - name: Vuepress to GitHub Pages
         uses: testthedocs/github-pages-deploy-action@0.0.2
         env:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           BUILD_DIR: docs/.vuepress/dist # The folder, the action should deploy.
-          BUILD_SCRIPT: npm install && npm run build # The build script the action should run prior to deploying.
+          BUILD_SCRIPT: yarn && yarn build # The build script the action should run prior to deploying.
