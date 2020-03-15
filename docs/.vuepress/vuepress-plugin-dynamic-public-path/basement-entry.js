@@ -3,7 +3,7 @@
  * (c) 2016-2019 真山
  */
 
-if (process.env.NODE_ENV === 'production') {
+if (process.env.NODE_ENV === 'production' && typeof window !== 'undefined') {
   window.publicPath = 'https://richlab.oss-cn-hangzhou.aliyuncs.com';
   window.routerBase = location.pathname;
 }
