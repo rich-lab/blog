@@ -6,6 +6,9 @@
         <p class="italic">Oh, hello, nice to meet you!</p>
         <h1>WELCOME TO RichLab's WORLD!</h1>
         <p class="italic">Professional & Creative & Freedom & love.</p>
+        <a class="continue-button" href="/about/">
+          Continue
+        </a>
       </div>
     </div>
   </section>
@@ -26,7 +29,7 @@
     min-height: 600px;
     padding: 0;
     background-size: cover;
-    background-position: center center;
+    background-position: center 65%;
     overflow: hidden;
     background-attachment: fixed;
   }
@@ -58,10 +61,40 @@
     
     .home-intro-wrapper {
       padding: 1.5rem;
-      height 300px;
-      margin-top 20%;
+      height 240px;
+      margin-top 16%;
+      @media (max-width: $MQMobile) {
+        margin-top 46%;
+      }
+    }
+    
+    .continue-button {
+      font-family: Arial;
+      letter-spacing 2px;
+      text-transform uppercase;
+      display: block
+      margin-top 2rem
+      width 200px;
+      height 50px;
+      outline none
+      border 2px solid $colorLight
+      background transparent
+      color $colorLight
+      font-size 24px
+      transition background 0.3s
+      cursor pointer
+      font-weight lighter
+      display flex
+      justify-content center
+      align-items center
+      
+      &:hover {
+        background $colorLight
+        color $colorDark
+      }
     }
   }
+  
   
   .home-intro p {
     font-style italic

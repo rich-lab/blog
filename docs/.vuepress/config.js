@@ -36,7 +36,7 @@ module.exports = {
     docsDir: '',
     editLinkText: '',
     lastUpdated: false,
-    logo: '/logo.png',
+    logo: 'https://gw.alipayobjects.com/zos/finxbff/compress-tinypng/b1a25d04-6a13-4bb5-a929-a5f0db08b8de.png',
     nav: [
       {
         text: 'Home',
