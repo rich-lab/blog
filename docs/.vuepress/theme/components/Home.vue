@@ -6,16 +6,23 @@
         <p class="italic">Oh, hello, nice to meet you!</p>
         <h1>WELCOME TO RichLab's WORLD!</h1>
         <p class="italic">Professional & Creative & Freedom & love.</p>
-        <a class="continue-button" href="/about/">
-          Continue
-        </a>
+        <NavLink
+          class="continue-button"
+          :item="{ text:'Continue', link: '/about/' }"
+        />
       </div>
     </div>
   </section>
 </template>
 
 <script>
-  export default {}
+  import NavLink from './NavLink'
+
+  export default {
+    components: {
+      NavLink
+    }
+  }
 </script>
 
 <style lang="stylus">
