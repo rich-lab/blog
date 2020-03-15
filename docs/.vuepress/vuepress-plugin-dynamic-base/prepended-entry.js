@@ -1,8 +1,7 @@
 /* global PUBLIC_PATH, ROUTE_BASE */
 
 if (typeof window !== 'undefined') {
-  if (process.env.NODE_ENV === 'production'
-  ) {
+  if (process.env.NODE_ENV === 'production') {
     /**
      * Strict object type check. Only returns true
      * for plain JavaScript objects.
