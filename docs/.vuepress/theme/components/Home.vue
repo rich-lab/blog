@@ -8,9 +8,6 @@
         <p class="italic">Professional & Creative & Freedom & love.</p>
       </div>
     </div>
-    <div>
-      1231231
-    </div>
   </section>
 </template>
 
@@ -20,7 +17,7 @@
 
 <style lang="stylus">
   .home {
-    background-image: url(/richlab.png);
+    background-image: url(https://gw.alipayobjects.com/zos/finxbff/compress-tinypng/3b2fcbee-aff1-4be3-8205-6b20a430aaff.png);
     position: relative;
     width: 100%;
     height: 100%;
@@ -60,8 +57,9 @@
     margin auto
     
     .home-intro-wrapper {
+      padding: 1.5rem;
       height 300px;
-      margin-top 30%;
+      margin-top 20%;
     }
   }
   
