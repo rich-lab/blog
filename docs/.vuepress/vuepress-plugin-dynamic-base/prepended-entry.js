@@ -18,11 +18,12 @@ if (typeof window !== 'undefined') {
       if (typeof ROUTE_BASE === 'string') {
         window.routerBase = ROUTE_BASE
       }
+      
       if (isPlainObject(ROUTE_BASE)) {
         for (let host of Object.keys(ROUTE_BASE)) {
           const currentHost = location.host || location.hostname
           if (currentHost.includes(host)) {
-            window.routerBase = host
+            window.routerBase = ROUTE_BASE[host]
             break
           }
         }
