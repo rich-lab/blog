@@ -17,6 +17,7 @@
     "@vuepress-reco/vuepress-plugin-comments": "^1.0.13",
     "@vuepress/plugin-back-to-top": "^1.0.0",
     "@vuepress/plugin-medium-zoom": "^1.0.0",
+    "vuepress-plugin-dynamic-base": "^0.1.1",
     "vuepress": "^1.0.0",
     "vuepress-plugin-comment": "^0.7.3",
     "lodash.throttle": "^4.1.1"

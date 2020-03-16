@@ -87,7 +87,7 @@ module.exports = {
       }
     }],
     [
-      require('./vuepress-plugin-dynamic-base'),
+      'dynamic-base',
       {
         publicPath: process.env.NETLIFY_CI
           ? null
