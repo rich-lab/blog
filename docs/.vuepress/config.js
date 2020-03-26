@@ -98,6 +98,25 @@ module.exports = {
           'rich-lab.github.io': '/blog/',
         }
       }
-    ]
+    ],
+    [
+      '@vuepress/blog',
+      {
+        directories: [
+          {
+            // Unique ID of current classification
+            id: 'post',
+            // Target directory
+            dirname: 'blog/_posts',
+            // Path of the `entry page` (or `list page`)
+            path: '/blog/',
+            // layout: 'Layout',
+            pagination: {
+              lengthPerPage: 20,
+            },
+          },
+        ],
+      },
+    ],
   ]
 }
