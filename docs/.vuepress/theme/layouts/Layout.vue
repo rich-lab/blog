@@ -1,6 +1,10 @@
 <template>
   <ParentLayout>
     <!--<CarbonAds slot="sidebar-top"/>-->
+    <div slot="page-top">
+      <slot name="page-top"></slot>
+    </div>
+    
     <div class="custom-page-bottom" slot="page-bottom">
       <!--<div slot="page-top">-->
         <!--<div class="sherry-edit-links">-->

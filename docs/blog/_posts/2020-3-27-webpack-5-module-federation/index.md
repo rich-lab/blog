@@ -2,7 +2,9 @@
 sidebar: auto
 date: 2020-3-16
 author: ulivz
-hero: https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1584385884454&di=d9d44c200947f9f5dbf9594cd005f1e0&imgtype=0&src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fimages%2F20181221%2F509cc3d5de8c4f2d95f8a9bed7a550f6.jpeg
+type: translation
+hero: /sddefault.jpg
+summary: Module Federation 允许一个 JavaScript 应用在客户端或服务器上动态运行来自另一个 bundle 或者 build 的代码。
 ---
 
 # Webpack 5 Module Federation: 一个 JavaScript 架构的游戏改变者
