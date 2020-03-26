@@ -21,7 +21,7 @@
     },
     
     created() {
-      console.log(this.$page.frontmatter.author)
+      // console.log(this.$page.frontmatter.author)
     }
   }
 </script>

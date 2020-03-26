@@ -30,7 +30,6 @@
 
     computed: {
       typeText() {
-        console.log(this.type)
         return this.type === 'translation'
           ? 'Translated by'
           : 'Author'

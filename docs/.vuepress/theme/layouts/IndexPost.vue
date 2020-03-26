@@ -41,8 +41,8 @@
     },
 
     created() {
-      console.log(this.$pagination)
-      console.log(this.$pagination.pages)
+      // console.log(this.$pagination)
+      // console.log(this.$pagination.pages)
     },
 
     computed: {

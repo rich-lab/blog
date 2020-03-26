@@ -34,7 +34,7 @@ Module Federation 允许一个 JavaScript 应用能够从另一个 JavaScript �
 ## 术语
 
 <p align="center">
-  <img src="./assets/915445ab.png" width="400">
+  <img src="./assets/main.png" width="400">
 </p>
 
 - **Module federation**: 与 Apollo GraphQL federation 的想法相同 —— 但适用于在浏览器或者 node.js 中的 JavaScript 模块。

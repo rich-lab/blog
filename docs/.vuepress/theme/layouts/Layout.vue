@@ -49,7 +49,7 @@
     },
 
     created() {
-      console.log(this.editLink)
+      // console.log(this.editLink)
     },
 
     computed: {
