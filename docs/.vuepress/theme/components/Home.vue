@@ -33,7 +33,7 @@ export default {
   min-height: 600px;
   padding: 0;
   background-size: cover;
-  background-position: center 65%;
+  background-position: center 40%;
   overflow: hidden;
   background-attachment: fixed;
 }
