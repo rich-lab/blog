@@ -1,12 +1,18 @@
 <template>
   <section class="home">
     <div class="home-overlay"></div>
+    <div
+      class="home-hy-back-text"
+      :style="{
+        opacity: hyBackTextOpacity / 100
+      }"
+    ></div>
     <div class="home-intro">
       <div class="home-intro-wrapper">
         <p class="italic">Oh, hello, nice to meet you!</p>
         <h1>WELCOME TO RichLab's WORLD!</h1>
         <p class="italic">Professional & Creative & Freedom & Love.</p>
-        <NavLink class="continue-button" :item="{ text:'Continue', link: '/about/' }" />
+        <NavLink class="continue-button" :item="{ text:'Continue', link: '/about/' }"/>
       </div>
     </div>
   </section>
@@ -16,6 +22,34 @@
 import NavLink from "./NavLink";
 
 export default {
+  data() {
+    return {
+      hyBackTextOpacity: 0,
+      direction: 1
+    }
+  },
+
+  mounted() {
+    this.hyBackTextTimer = setInterval(() => {
+      if (this.direction === 1) {
+        this.hyBackTextOpacity++
+      } else {
+        this.hyBackTextOpacity--
+      }
+
+      if (this.hyBackTextOpacity == 70) {
+        this.direction = 0
+      }
+      if (this.hyBackTextOpacity == 0) {
+        this.direction = 1
+      }
+    }, 10)
+  },
+  
+  destroyed() {
+    clearInterval(this.hyBackTextTimer)
+  },
+
   components: {
     NavLink
   }
@@ -33,9 +67,15 @@ export default {
   min-height: 600px;
   padding: 0;
   background-size: cover;
-  background-position: center 65%;
+  background-position: center 40%;
   overflow: hidden;
   background-attachment: fixed;
+  @media (max-width: $MQMobile) {
+    background-size: 300% auto;
+    background-position: 10% 0%;
+    overflow: hidden;
+    background-attachment: fixed;
+  }
 }
 
 .home-overlay {
@@ -47,6 +87,27 @@ export default {
   background: #000;
   z-index: 2;
   opacity: 0.6;
+}
+
+.home-hy-back-text {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  background-image: url(/hy-back-text.png);
+  background-position: center 40%;
+  background-attachment: fixed;
+  background-size: cover;
+  opacity 50
+  
+  @media (max-width: $MQMobile) {
+    background-size: 300% auto;
+    background-position: 10% 0%;
+    overflow: hidden;
+    background-attachment: fixed;
+  }
 }
 
 .home-intro {
@@ -61,17 +122,17 @@ export default {
   align-content: center;
   justify-content: center;
   margin: auto;
-
+  
   .home-intro-wrapper {
     padding: 1.5rem;
     height: 240px;
     margin-top: 16%;
-
+    
     @media (max-width: $MQMobile) {
       margin-top: 46%;
     }
   }
-
+  
   .continue-button {
     font-family: Arial;
     letter-spacing: 2px;
@@ -91,11 +152,11 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-
+    
     @media (min-width: $MQMobile) {
       float: right;
     }
-
+    
     &:hover {
       background: $colorLight;
       color: $colorDark;
