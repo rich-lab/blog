@@ -48,7 +48,7 @@ Module Federation 允许一个 JavaScript 应用能够从另一个 JavaScript �
 对于那些想要更容易理解这篇文章的人, [Jack Herrington](https://medium.com/@jherr) 写了一篇!
 
 <p align="center">
-  <iframe width="100%" height="315" src="https://www.youtube.com/embed/D3XYAx30CNc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe width="100%" height="315" src="https://www.youtube.com/embed/D3XYAx30CNc" frameborder="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </p>
 
 <Highlight>

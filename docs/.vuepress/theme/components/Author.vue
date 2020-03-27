@@ -1,17 +1,15 @@
 <template>
   <div
-    class="type-text"
+    class="author"
     ref="author"
   >
-    <span>{{ typeText }}</span>
+    <span class="type-text">{{ typeText }}</span>
     <a
+      class="author-image"
       :href="`https://github.com/${name}`"
-      class="author"
       target="_blank"
-      :style="{
-      backgroundImage: `url(${`https://github.com/${name}.png`})`
-    }"
     >
+      <img :src="$withBase(`/authors/${name}.png`)" alt="">
     </a>
   </div>
 </template>
@@ -24,8 +22,11 @@
     ],
 
     mounted() {
-      const el = document.querySelector('.theme-default-content h1')
-      el.appendChild(this.$refs.author)
+      const target = document.querySelector('.theme-default-content h1 .author')
+      if (!target) {
+        const el = document.querySelector('.theme-default-content h1')
+        el.appendChild(this.$refs.author)
+      }
     },
 
     computed: {
@@ -39,13 +40,11 @@
 </script>
 
 <style lang="stylus">
-  .type-text {
+  .author {
     text-align right
   }
   
-  .author {
-    margin-left: 10px;
-    background-size: cover;
+  .author-image {
     display: block;
     width: 40px;
     height: 40px;
@@ -60,11 +59,11 @@
   }
   
   .type-text {
-    font-size 1rem
+    font-size 0.9rem
     font-family Arial
     letter-spacing 0px
     font-weight lighter
     text-transform none
-    color #ddd
+    color #ccc
   }
 </style>
