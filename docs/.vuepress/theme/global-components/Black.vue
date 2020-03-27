@@ -9,7 +9,7 @@
   .black {
     cursor pointer
     font-size 0
-    filter: grayscale(100%);
+    filter: grayscale(50%);
     position relative;
     transition all 0.3s;
     
