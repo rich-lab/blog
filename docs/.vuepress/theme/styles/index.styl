@@ -156,33 +156,38 @@ body {
     position: relative;
   }
 
-
   a {
-    white-space: nowrap;
-    overflow-y hidden
-    overflow-x scroll
-    max-width 100%
-    position: relative;
-    display: inline-block;
-    vertical-align bottom
+    cursor pointer
+    @media (min-width: $MQMobile) {
+      color $colorFont
+    }
   }
 
-  a:after {
-    content: "";
-    position: absolute;
-    top: 70%;
-    left: -0.1em;
-    right: -0.1em;
-    bottom: -20%;
-    transition: top 200ms cubic-bezier(0, 0.8, 0.13, 1);
-    background-color: alpha(#0093D7, 0.2);
-  }
+  @media (min-width: $MQMobile) {
+    a {
+      max-width 100%
+      position: relative;
+      display: inline-block;
+      vertical-align bottom
+    }
 
-  a:hover {
-    text-decoration: none !important;
+    a:after {
+      content: "";
+      position: absolute;
+      top: 60%;
+      left: -0.1em;
+      right: -0.1em;
+      bottom: 0;
+      transition: top 200ms cubic-bezier(0, 0.8, 0.13, 1);
+      background-color: alpha($accentColor, 0.3);
+    }
 
-    &:after {
-      top: 0%;
+    a:hover {
+      text-decoration: none !important;
+
+      &:after {
+        top: 0%;
+      }
     }
   }
 }
@@ -255,7 +260,8 @@ h1 a::after {
 
   @media (min-width: $MQMobile) {
     .theme-default-content.content__default:not(.custom) > h1 {
-      margin-top 3rem!important
+      margin-top 3rem !important
+
       &:first-child {
         margin-top -1.5rem
         margin-bottom 1rem

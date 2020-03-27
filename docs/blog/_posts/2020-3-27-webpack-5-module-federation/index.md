@@ -11,7 +11,7 @@ summary: Module Federation 允许一个 JavaScript 应用在客户端或服务�
 
 > 原文：[Webpack 5 Module Federation: A game-changer in JavaScript architecture](https://medium.com/@ScriptedAlchemy/webpack-5-module-federation-a-game-changer-to-javascript-architecture-bcdd30e02669)
 
-Module Federation <code style="font-family: Arail">[ˌfedəˈreɪʃn]</code> 允许一个 JavaScript 应用在客户端或服务器上动态运行来自另一个 bundle 或者 build 的代码。
+Module Federation <code style="font-family: Arail"><i>[ˌfedəˈreɪʃn]</i></code> 允许一个 JavaScript 应用在客户端或服务器上动态运行来自另一个 bundle 或者 build 的代码。
 
 **Module Federation 之于 JavaScript Bundler，如同 Apollo 之于 GraphQL。**
 
@@ -61,13 +61,11 @@ Module Federation 允许一个 JavaScript 应用能够从另一个 JavaScript �
 
 <!--     <small>译者注：</small><br> -->
 
-<p align="center">
-  <img src="./assets/kevin-saldana-tweet.png" width="500"><br>
-  <a target="_blank" href="https://twitter.com/kmsaldana1/status/1234551387398103043?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed&ref_url=https%3A%2F%2Fcdn.embedly.com%2Fwidgets%2Fmedia.html%3Ftype%3Dtext%252Fhtml%26key%3Da19fcc184b9711e1b4764040d3dc5c07%26schema%3Dtwitter%26url%3Dhttps%253A%2F%2Ftwitter.com%2Fkmsaldana1%2Fstatus%2F1234551387398103043%26image%3Dhttps%253A%2F%2Fi.embed.ly%2F1%2Fimage%253Furl%253Dhttps%25253A%25252F%25252Fpbs.twimg.com%25252Fprofile_images%25252F1016423846809722880%25252FJyBot7JY_400x400.jpg%2526key%253Da19fcc184b9711e1b4764040d3dc5c07">View source tweet</a>
-
-</p>
-
-<Highlight>
+<CardLink>
+  <a target="_blank" href="https://twitter.com/kmsaldana1/status/1234551387398103043?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed&ref_url=https%3A%2F%2Fcdn.embedly.com%2Fwidgets%2Fmedia.html%3Ftype%3Dtext%252Fhtml%26key%3Da19fcc184b9711e1b4764040d3dc5c07%26schema%3Dtwitter%26url%3Dhttps%253A%2F%2Ftwitter.com%2Fkmsaldana1%2Fstatus%2F1234551387398103043%26image%3Dhttps%253A%2F%2Fi.embed.ly%2F1%2Fimage%253Furl%253Dhttps%25253A%25252F%25252Fpbs.twimg.com%25252Fprofile_images%25252F1016423846809722880%25252FJyBot7JY_400x400.jpg%2526key%253Da19fcc184b9711e1b4764040d3dc5c07">
+    <img src="./assets/kevin-saldana-tweet.png" width="500">
+  </a>
+</CardLink>
 
 假设一个网站的每个页面都是独立部署和编译的，我想要这种微前端风格的架构，但不想在更改路由时页面重新加载，我同时也期望在他们之间动态地共享代码和 vendors，所以它的效率就像是一个有 code splitting 的大型 Webpack 构建。
 

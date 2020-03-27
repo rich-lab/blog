@@ -42,6 +42,9 @@
 <style lang="stylus">
   .author {
     text-align right
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
   }
   
   .author-image {
@@ -52,6 +55,7 @@
     overflow: hidden;
     display inline-block;
     vertical-align center !important
+    margin-left 10px
     
     &::after {
       display none
