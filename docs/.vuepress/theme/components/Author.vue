@@ -60,7 +60,7 @@
   
   .type-text {
     font-size 0.9rem
-    font-family Arial
+    font-family: "Cardo", "Times New Roman", Times, serif;
     letter-spacing 0px
     font-weight lighter
     text-transform none

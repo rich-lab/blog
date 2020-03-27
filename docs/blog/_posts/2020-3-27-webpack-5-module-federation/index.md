@@ -11,7 +11,7 @@ summary: Module Federation 允许一个 JavaScript 应用在客户端或服务�
 
 > 原文：[Webpack 5 Module Federation: A game-changer in JavaScript architecture](https://medium.com/@ScriptedAlchemy/webpack-5-module-federation-a-game-changer-to-javascript-architecture-bcdd30e02669)
 
-Module Federation(`[ˌfedəˈreɪʃn]`) 允许一个 JavaScript 应用在客户端或服务器上动态运行来自另一个 bundle 或者 build 的代码。
+Module Federation <code style="font-family: Arail">[ˌfedəˈreɪʃn]</code> 允许一个 JavaScript 应用在客户端或服务器上动态运行来自另一个 bundle 或者 build 的代码。
 
 **Module Federation 之于 JavaScript Bundler，如同 Apollo 之于 GraphQL。**
 
