@@ -39,7 +39,7 @@
     justify-content center
     align-items flex-end
     position relative
-    padding 1rem
+    padding 3rem 1.8rem
     
     &:hover {
       text-decoration none !important
@@ -64,23 +64,32 @@
     .post-title {
       text-align left
       text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
-      padding 5px 10px
       letter-spacing 5px
       color #ccc
       font-family: "Montserrat", sans-serif;
       font-weight bold
-      font-size 2rem;
-      transition color 0.3s, border 0.3s
+      font-size 1.5rem;
+      transition color 0.3s
     }
     
     .post-summary {
+      display inline-block
+      margin-top 1rem
       font-family Arial
-      font-size 1rem;
+      font-size 0.8rem;
+      color #aaa
+      transition color 0.3s
+      font-weight 400
+      /*font-style italic*/
+      /*text-decoration underline*/
+      &:hover {
+        color #ccc
+      }
     }
     
     &:hover {
       .post-overlay {
-        opacity: 0.5;
+        opacity: 0.6;
       }
       
       .post-title {
