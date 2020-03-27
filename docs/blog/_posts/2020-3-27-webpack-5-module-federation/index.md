@@ -4,12 +4,12 @@ date: 2020-3-27
 author: ulivz
 type: translation
 hero: /sddefault.jpg
-summary: Module Federation 允许一个 JavaScript 应用在客户端或服务器上动态运行来自另一个 bundle 或者 build 的代码。
+summary: Webpack 5 新特性 —— Module Federation, 让 JavaScript 应用得以在客户端或服务器上动态运行另一个 bundle 或者 build 的代码。
 ---
 
-# Webpack 5 Module Federation: JavaScript 架构的规则改变者
+# Webpack 5 Module Federation: JavaScript 架构的变革者
 
-Module Federation <code style="font-family: Arail"><i>[ˌfedəˈreɪʃn]</i></code> 允许一个 JavaScript 应用在客户端或服务器上动态运行来自另一个 bundle 或者 build 的代码。
+Module Federation <code style="font-family: Arail"><i>[ˌfedəˈreɪʃn]</i></code> 使 JavaScript 应用得以在客户端或服务器上动态运行另一个 bundle 或者 build 的代码。
 
 > 原文：[Webpack 5 Module Federation: A game-changer in JavaScript architecture](https://medium.com/@ScriptedAlchemy/webpack-5-module-federation-a-game-changer-to-javascript-architecture-bcdd30e02669)
 
@@ -17,21 +17,21 @@ Module Federation <code style="font-family: Arail"><i>[ˌfedəˈreɪʃn]</i></co
 
 **Module Federation 之于 JavaScript Bundler，如同 Apollo 之于 GraphQL。**
 
-> 在独立的 Web 应用之间共享代码的可伸缩解决方案从来都不方便，而且几乎不可能大规模实现。在此之前，我们最接近的是 externals 或者 DLLPlugin，强制把依赖集中于一个外部文件中。共享代码真地很麻烦，表面上独立的应用通常不是真正意义上的独立，而且共享的依赖数量通常有限。此外，在单独打包的 Web 应用之间共享实际的特性代码往往是不可行的、**效果不好的**、没有收益的。
+> 在独立的应用之间共享代码的可伸缩解决方案从未如此方便，而且几乎不可能大规模实现。此前我们拥有的最成熟方案是 externals 或 DLLPlugin，它们强制把依赖集中于一个外部文件中。共享代码真的很麻烦，因为很多应用看似独立，却不是真正意义上的独立，可共享的依赖非常有限。此外，在单独打包的 Web 应用之间共享实际的特性代码往往并不可行、**无效**、且毫无益处。
 
-## 什么是 Module Federation?
+## 那么什么是 Module Federation?
 
-这是我发明并且赋予它最初形态的一种 JavaScript 架构，在我们 Webpack 创始人的帮助下，它变成了 Webpack 5 Core 中最令人兴奋的功能之一（里面有一些很酷的东西，新的 API 非常强大和干净）。
+这是我发明并且赋予它最初形态的 JavaScript 架构，在我的联合创作者兼 Webpack 创始人的帮助下，它成为了 Webpack 5 Core 中最令人兴奋的功能之一（Webpack 5 有一堆很酷的东西，新的 API 强大又干净）。
 
 <Highlight>
 
-我非常荣幸向大家介绍 JavaScript 应用程序架构中的一个期待已久的飞跃，我们对于开源社区的贡献：Module Federation。
+我非常荣幸地向大家介绍 JavaScript 应用架构中的一个期待已久的飞跃，我们对于开源社区的贡献：Module Federation。
 
 </Highlight>
 
-Module Federation 允许一个 JavaScript 应用能够从另一个 JavaScript 应用中动态地加载代码 —— 在这个流程中共享着依赖，如果一个应用正在消费的 federated module 没有 federated code 中需要的的依赖，Webpack 将会从 federated 生成源中下载缺少的依赖项。
+Module Federation 使 JavaScript 应用得以从另一个 JavaScript 应用中动态地加载代码 —— 同时共享依赖。如果某应用所消费的 federated module 没有 federated code 中所需的依赖，Webpack 将会从 federated 构建源中下载缺少的依赖项。
 
-代码可以共享，但在每种情况下都存在降级措施。federated code 可以总是加载自己的依赖，但在下载前会去尝试使用消费者的依赖。更少的代码冗余，依赖共享就像一个单一的 Webpack 构建。虽然我已经实现了这个最初的系统——他是由我自己（[Zack Jackson](https://medium.com/@ScriptedAlchemy)）和 [Marais Rossouw](https://medium.com/@maraisr) 在很多 [Tobias Koppers](https://medium.com/@sokra) 的帮助和结对编程下完成的。这些开发者在 Webpack 5 的核心重写和稳定化上发挥了十分重要的作用，谢谢你们持续的合作和支持。
+代码是可以共享的，但每种情况都有降级方案。federated code 可以总是加载自己的依赖，但在下载前会去尝试使用消费者的依赖。更少的代码冗余，依赖共享就像一个单一的 Webpack 构建。虽然我已经实现了这个最初的系统——他是由我自己（[Zack Jackson](https://medium.com/@ScriptedAlchemy)）和 [Marais Rossouw](https://medium.com/@maraisr) 在 [Tobias Koppers](https://medium.com/@sokra) 的悉心帮助和结对编程下完成的。这些开发者们在 Webpack 5 的核心重写和稳定化上起着关键性的作用，谢谢你们一直以来的合作和支持。
 
 ## 术语
 
@@ -39,15 +39,15 @@ Module Federation 允许一个 JavaScript 应用能够从另一个 JavaScript �
   <img src="./assets/main.png" width="400">
 </p>
 
-- **Module federation**: 与 Apollo GraphQL federation 的想法相同 —— 但适用于在浏览器或者 node.js 中的 JavaScript 模块。
+- **Module federation**: 与 Apollo GraphQL federation 的想法相同 —— 但适用于在浏览器或者 Node.js 中运行的 JavaScript 模块。
 
-- **A host**：一个在页面加载后（当 `onLoad` 事件被触发）被初始化的 Webpack 构建；
+- **host**：在页面加载过程中（当 `onLoad` 事件被触发）最先被初始化的 Webpack 构建；
  
-- **A remote**：其中一部分被 **“host”** 消费的另一个 Webpack 构建；
+- **remote**：部分被 **“host”** 消费的另一个 Webpack 构建；
 
-- **Bidirectional（双向的） hosts**：当一个 bundle 或者 webpack build 作为一个 `host` 或 `remote` 工作时，要么在 runtime 消费其他的应用，要么被其他应用消费。
+- **Bidirectional（双向的） hosts**：当一个 bundle 或者 webpack build 作为一个 `host` 或 `remote` 运行时，它要么消费其他应用，要么被其他应用消费——均发生在运行时(runtime)。
 
-对于那些想要更容易理解这篇文章的人, [Jack Herrington](https://medium.com/@jherr) 写了一篇!
+如果你想更好地理解这篇文章，欢迎阅读[Jack Herrington](https://medium.com/@jherr) 写的文章!
 
 <p align="center">
   <iframe width="100%" height="315" src="https://www.youtube.com/embed/D3XYAx30CNc" frameborder="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -59,7 +59,7 @@ Module Federation 允许一个 JavaScript 应用能够从另一个 JavaScript �
 
 </Highlight>
 
-这些应用都是 **bidirectional（双向的） hosts**，任何首先加载的应用在修改路由或者浏览的时候，将成为一个 host，并用你实现 dynamic imports 一样的方式来加载 federated modules，然而，如果你要刷新页面，则无论应用是不是第一次在页面 load 后运行，都将成为一个 host。
+这些应用都是 **bidirectional（双向的） hosts**. 所有在你修改路由或者移动应用时率先加载的应用都将成为 host, 它会像你实现 dynamic imports 一样加载 federated modules. 不过，如果你要刷新页面，则任何在之后的 load 中率先启动的应用，都将成为一个 host。
 
 <!--     <small>译者注：</small><br> -->
 
@@ -69,26 +69,26 @@ Module Federation 允许一个 JavaScript 应用能够从另一个 JavaScript �
   </a>
 </CardLink>
 
-假设一个网站的每个页面都是独立部署和编译的，我想要这种微前端风格的架构，但不想在更改路由时页面重新加载，我同时也期望在他们之间动态地共享代码和 vendors，所以它的效率就像是一个有 code splitting 的大型 Webpack 构建。
+假设一个网站的每个页面都是独立部署和编译的，我想要这种微前端风格的架构，但不希望页面随着我更改路由而重新加载。我还希望在页面之间动态地共享代码和 vendors, 这样它就像支持 code splitting 的大型 Webpack 构建般高效了。
 
 </Highlight>
 
 
-访问应用的 home 也将会使这个 “home” 页成为一个 “host”，如果你切换到 “about” 页，那么这个 host（home page spa）实际上是从另一个独立的应用（about page spa）中动态加载一个模块，它并没有加载应用主入口以及另一个完整的应用。如果我现在在 “about” 页刷新浏览器，“about” 页 将会成为一个 “host”，**只会加载几千字节的代码**。再次回到  “home” 页，将会是 “about” 页（“host” ）从一个 “remote” 获取运行时的一些片段，这个 “remote” 就是 “home” 页 —— 所有的应用都是这个系统中的  “remote”、“host”，可消费的 federated module 或者 federated module 的消费者。
+访问应用的 home 也将会使这个 “home” 页成为 “host”，如果你切换到 “about” 页，那么这个 host（home 页的 spa）实际上是从另一个独立应用（about 页的 spa）中动态加载一个模块，它并不会加载应用主入口以及另一个完整的应用，**而只会加载几千字节的代码**。如果我在 “about” 页刷新浏览器，“about” 页将会成为 “host”，此时我回到 “home” 页，“about” 页（“host”）将会从 “remote” 获取运行时的一些片段——这个 “remote” 就是 “home” 页。在这个系统中，所有的应用都既是 “remote” 又是 “host”，与其它 federated module 互为消费者与被消费者。
 
-可以在 Github 上找到更多的技术细节：
+你可以在 Github 上找到更多的技术细节：
 
 [Merge Proposal: Module federation and code sharing between bundles. Many builds act as one](https://medium.com/@ScriptedAlchemy/webpack-5-module-federation-a-game-changer-to-javascript-architecture-bcdd30e02669)
 
 ## 构建一个 federated application
 
-让我们从三个独立的应用程序开始。
+让我们从三个独立的应用入手。
 
 ### App One
 
 #### 配置
 
-我将使用 **App One** 中的应用容器 `<App>`，它将会被另一个应用消费，为此，我 expose App 为 AppContainer，**App One** 将会同时消费来自另外两个 federated applications 中的组件，为此，我指定了 remote 的 scope：
+我将使用 **App One** 中的应用容器 `<App>`，它将会被另一个应用消费，为此，我把 App expose 为 AppContainer，**App One** 将会同时消费来自另外两个 federated applications 中的组件，为此，我指定了 `remotes` scope：
 
 ```js
 const HtmlWebpackPlugin = require("html-webpack-plugin");
@@ -118,9 +118,9 @@ module.exports = {
 
 #### 设定构建编排流程
 
-在应用的头部，我加载 `app_one_remote.js` —— 这将让当前的应用连接到其他 Webpack runtimes，并在运行时提供一个编排层（orchestration layer），这是一个专门设计的 Webpack runtime 和 entry point，**但它不是一个普通的应用 entry point，并且只有几 KB**。
+在应用的头部，我加载了 `app_one_remote.js` —— 来让当前的应用连接到其他 Webpack runtimes，并在运行时提供一个编排层（orchestration layer），这是一个专门设计的 Webpack runtime 和 entry point，**但它不是一个普通的应用 entry point，并且只有几 KB**。
 
-**要注意，这些特殊的 entry points 大小只有几KB —— 它们包含一个特殊的可以与 host 连接的特殊的 Webpack runtime，它们不是标准的 entry point。**
+**要注意，这些特殊的 entry points 大小只有几 KB——它们包含一个可以与 host 连接的特殊的 Webpack runtime，它们并非标准的 entry point。**
 
 ```html
 <head>
@@ -134,7 +134,7 @@ module.exports = {
 
 #### 从 remote 消费代码
 
-**App One** 有一个页面，消费了提个来自 **App Two** 的 dialog 组件：
+**App One** 中有个 Page1 页面消费了 **App Two** 的 dialog 组件：
 
 ```jsx
 const Dialog = React.lazy(() => import("app_two_remote/Dialog"));
@@ -153,7 +153,7 @@ const Page1 = () => {
 export default Page1;
 ```
 
-路由看起来相当简单：
+路由看起来很标准：
 
 ```jsx harmony
 import { Route, Switch } from "react-router-dom";
@@ -187,7 +187,7 @@ export default Routes;
 #### 配置
 
 
-**App Two** 将会导出 Dialog，并让 **App One** 来消费它，**App Two** 将会同时消费 **App One** 的 `<App>` —— 因此我们把 `app_one` 设置为一个 “remote”。
+**App Two** 将会导出 Dialog，并让 **App One** 来消费它，**App Two** 将会同时消费 **App One** 的 `<App>` —— 因此我们把 `app_one` 页设置为 “remote”。演示一下 bi-directional hosts.
 
 ```js
 const HtmlWebpackPlugin = require("html-webpack-plugin");
@@ -244,7 +244,6 @@ import {ThemeProvider} from "@material-ui/core";
 import {theme} from "./theme";
 import Dialog from "./Dialog";
 
-
 function MainPage() {
     return (
         <ThemeProvider theme={theme}>
@@ -261,7 +260,7 @@ export default MainPage
 
 ### App Three
 
-正如所料，**App Three** 看起来（和**App Two**）很相似。但是，它不消费来自 **App one** 的独立自运行的组件 `<App>` （没有导航栏和侧边栏），因此，它没有指定任何 “remote”：
+正如所料，**App Three** 看起来（和**App Two**）很相似。但是，它不消费来自 **App one** 的独立自运行的组件 `<App>` （没有导航栏或侧边栏），因此，它并未指定任何 “remote”：
 
 ```js
 new ModuleFederationPlugin({
@@ -277,7 +276,7 @@ new ModuleFederationPlugin({
 
 ## 浏览器中的最终结果（不同于第一个视频）
 
-请重点关注 network，来自三个不同服务器的代码正在被整合（federated），三个不同的 bundles，通常来说，建议不要 federate 整个应用的容器，除非你不想享受 SSR 或者渐进式加载带来的好处。不管怎么说，这个概念相当强大。
+请重点关注 network 标签页，来自三个不同服务器的代码正在被整合（federated），三个不同的 bundles，我们一般建议不要 federate 整个应用的容器，除非你正享受 SSR 或者渐进式加载带来的好处。不管怎么说，这个概念简直太强大了。
 
 <CardLink>
   <a target="_blank" href="https://twitter.com/ScriptedAlchemy/status/1234383702433468416?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed&ref_url=https%3A%2F%2Fcdn.embedly.com%2Fwidgets%2Fmedia.html%3Ftype%3Dtext%252Fhtml%26key%3Da19fcc184b9711e1b4764040d3dc5c07%26schema%3Dtwitter%26url%3Dhttps%253A%2F%2Ftwitter.com%2Fscriptedalchemy%2Fstatus%2F1234383702433468416%26image%3Dhttps%253A%2F%2Fpbs.twimg.com%2Fext_tw_video_thumb%2F1234383371863617536%2Fpu%2Fimg%2FlQ-uregGFW3TExzi.jpg">
@@ -287,7 +286,7 @@ new ModuleFederationPlugin({
 
 ### 代码冗余
 
-这里几乎没有任何的依赖冗余，通过 `shared` 选项 —— **remotes 将会首先依赖来自 host 的依赖，如果 host 没有依赖，它将会下载自己的依赖。没有代码层面的冗余，而只有内置的冗余。**
+这里几乎没有任何依赖冗余，通过 `shared` 选项 —— **remotes 将会首先依赖来自 host 的依赖，如果 host 没有依赖，它将会下载自己的依赖。没有代码层面的冗余，而只有内置的冗余。**
 
 <CardLink>
  <a target="_blank" href="https://twitter.com/ScriptedAlchemy/status/1233996827814322178?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed&ref_url=https%3A%2F%2Fcdn.embedly.com%2Fwidgets%2Fmedia.html%3Ftype%3Dtext%252Fhtml%26key%3Da19fcc184b9711e1b4764040d3dc5c07%26schema%3Dtwitter%26url%3Dhttps%253A%2F%2Ftwitter.com%2Fscriptedalchemy%2Fstatus%2F1233996827814322178%26image%3Dhttps%253A%2F%2Fi.embed.ly%2F1%2Fimage%253Furl%253Dhttps%25253A%25252F%25252Fpbs.twimg.com%25252Fprofile_images%25252F1006614185093091337%25252FOAPr0bpP_400x400.jpg%2526key%253Da19fcc184b9711e1b4764040d3dc5c07">
@@ -295,15 +294,15 @@ new ModuleFederationPlugin({
   </a>
 </CardLink>
 
-然而手动的增加 vendors 或其他的模块不易于拓展，可以利用一个自定义的函数来实现自动化，或者有一个相应的 Webpack 插件，我们的确计划去发布 `AutomaticModuleFederationPlugin`，并且在 Webpack Core 之外去维护它。既然我们在 Webpack 中已经有了相当好的 code federation 支持，拓展它的功能就不值一提了。
+然而手动地增加 vendors 或其他用于`共享`的模块并不利于拓展，你可以自定义一个函数或者相应的 Webpack 插件来实现自动化。我们的确计划发布 `AutomaticModuleFederationPlugin`，并且在 Webpack Core 之外去维护它。既然我们在 Webpack 中已经有了相当好的 code federation 支持，拓展它的功能就不值一提了。
 
-现在来了一个大问题… 这和 SSR 有什么关系吗？？
+那么大问题来了… 上面说的这些支持 SSR 吗？？
 
 <iframe src="https://giphy.com/embed/3oz8xwNlejeJDQREic" width="100%" height="400" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p></p>
 
 ## 服务端渲染
 
-我们将其设计成了可以在任何环境下工作的 “通用模块 Federation”，服务端渲染 federated code 是完全可以的。只要让服务器构建使用一个 `commonjs` 的 library target。实现 federated SSR 有很多种办法，S3 Streaming, ESI, 自动化一个 npm 发布去消费服务器的变化内容，我计划去使用一个常用的共享文件的 volume 或者移步的 S3 streaming 来跨文件系统传输文件。让服务器能够像在浏览器中一样去 require federated code，使用 fs 而不是 http 来加载 federated code。
+我们将其设计成了可以在任何环境下工作的 “通用模块 Federation”，服务端渲染 federated code 是完全可行的，只要让服务器构建使用一个 `commonjs` 的 library target。实现 federated SSR 有很多种办法，S3 Streaming, ESI, 自动化一个 npm 发布去消费服务器的变化内容，我计划用一个常用的共享文件的 volume 或者移步的 S3 streaming 来跨文件系统传输文件。让服务器能够像在浏览器中一样去 require federated code，使用 fs 而不是 http 来加载 federated code。
 
 ```js
 module.exports = {
@@ -326,13 +325,13 @@ module.exports = {
 
 <Highlight>
 
-“Module Federation 当然也适用于 `target: "node"`，这里使用指向其他微前端应用的文件路径，而不是 URLs。这样的话你就可以用同样的代码，外加不一样的 Webpack 配置来在 node.js 中实现 SSR。其他的 Module Federation 特性在 node.js 都保持不变，如独立构建、独立部署。—— Tobias Koppers
+“Module Federation 当然也适用于 `target: "node"`，这里使用指向其他微前端应用的文件路径，而不是 URLs。这样的话你就可以用同样的代码，外加不一样的 Webpack 配置来在 Node.js 中实现 SSR. Module Federation 的特性在 Node.js 中保持不变，如独立构建、独立部署。—— Tobias Koppers
 
 </Highlight>
 
 ## Federated Next.js on Webpack 5
 
-Federation 依赖 Webpack 5 —— Next 并未官方支持。然而，我已经 fork Next.js，并想办法让 Next.js 升级到 Webpack 5 能够 work！这项工作仍在持续中，一些开发模式下的中间件需要完成。生产模式已经 work，但某些附加的 loaders 仍然需要重新测试。
+Federation 依赖 Webpack 5 —— Next 并未官方支持。不过我已经 fork Next.js，并设法升级它以支持 Webpack 5 了！这项工作仍在进行中，还有一些开发模式下的中间件需要完成。生产模式已经搞定了，但某些附加的 loaders 仍然需要重新测试。
 
 [feat: Upgrade Next.js to Webpack 5](https://github.com/module-federation/next.js/pull/2)
 
@@ -345,7 +344,7 @@ Federation 依赖 Webpack 5 —— Next 并未官方支持。然而，我已经 
 ### Talks, podcasts, or feedback
 
 
-我非常想有和大家分享关于这项技术的机会，如果你想要使用 `Module Federation` 或者 `Federated architecture`，我们想要听到你的反馈并且可能会对现有的架构进行一些调整。我们也非常期望能够有机会在 Podcasts、meetups 或者 corporations 中讨论它。你可以通过 [Twitter](https://twitter.com/ScriptedAlchemy) 联系到我。
+我非常想有和大家分享这项技术的机会，如果你想要使用 `Module Federation` 或者 `Federated architecture`，我们想要听到你的使用经历以及对现有的架构的调整。我们也非常期望能够有机会在 Podcasts、meetups 或者 corporations 中讨论它。你可以通过 [Twitter](https://twitter.com/ScriptedAlchemy) 联系到我。
 
 <CardLink>
 
@@ -354,7 +353,7 @@ Federation 依赖 Webpack 5 —— Next 并未官方支持。然而，我已经 
 </CardLink>
 
 
-你还可以联系我的 co-creator，来了解 Module Federation 最新的一些变化、FOSA (Federation of Standalone Applications) 架构，以及我们正在做的其他工具 —— 用于和 Federated Applications 一起工作的工具。
+你还可以联系我的联合创作者，来了解 Module Federation 的最新变化、FOSA (Federation of Standalone Applications) 架构，以及我们正在做的其他工具 —— 用于和 Federated Applications 共用的工具。
 
 <CardLink>
 
@@ -363,9 +362,9 @@ Federation 依赖 Webpack 5 —— Next 并未官方支持。然而，我已经 
 </CardLink>
 
 
-## Module Federation 的一些例子
+## 使用 Module Federation 的例子
 
-社区对 Module Federation 的反馈非常热烈！Co-creators 和我的大部分时间，都集中在将这项特性写到 Webpack 5 中，我们期望一些代码样例能够帮助我们完成剩余的特性，以及书写文档。
+社区对 Module Federation 的反馈非常热烈！我和我的创作者们的大部分时间，都集中在将这项特性写到 Webpack 5 中，当我们忙于完成剩余特性，以及书写文档时，希望这些代码示例能对你有帮助。
 
 <CardLink>
 
@@ -373,7 +372,7 @@ Federation 依赖 Webpack 5 —— Next 并未官方支持。然而，我已经 
 
 </CardLink>
 
-我们将创建一些 SSR 示例和更全面的 demo，如果有人想建设一些可以作为 demo 的东西 —— 我们很乐意接受提交给 `webpack-external-import` 的 pull requests。
+因为我们有带宽，所以我们将创建一些 SSR 示例和更全面的 demo，如果有人想建设可以作为 demo 使用的东西 —— 我们很乐意接受提交给 `webpack-external-import` 的 pull requests。
 
 <CardLink>
 
@@ -394,6 +393,4 @@ Federation 依赖 Webpack 5 —— Next 并未官方支持。然而，我已经 
 
 </CardLink>
 
-Thanks to Tobias Koppers. 
-
-## Comments
+感谢 Tobias Koppers. 
