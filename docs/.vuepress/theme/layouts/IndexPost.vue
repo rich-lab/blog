@@ -3,6 +3,7 @@
     <template slot="page-top">
       <div class="blog-layout">
         <BlogBlockLayout :pages="pages"/>
+        <BlogSimpleLayout :pages="pages"/>
         <!--<section class="rest-posts">-->
         <!--<router-link-->
         <!--v-for="page in $pagination.pages"-->
@@ -32,12 +33,14 @@
   import ParentLayout from '@parent-theme/layouts/Layout.vue'
   import { Pagination } from '@vuepress/plugin-blog/lib/client/components'
   import BlogBlockLayout from './BlogBlockLayout'
+  import BlogSimpleLayout from './BlogSimpleLayout'
 
   export default {
     components: {
       ParentLayout,
       Pagination,
       BlogBlockLayout,
+      BlogSimpleLayout,
     },
 
     created() {
@@ -74,6 +77,19 @@
   
   .rest-posts {
     padding $collapse
-    
   }
+  
+  @media (min-width: $MQMobile) {
+    .blog-simple-layout {
+      display none
+    }
+  }
+
+  @media (max-width: $MQMobile) {
+    .blog-block-layout {
+      display none
+    }
+  }
+  
+  
 </style>
