@@ -16,10 +16,6 @@
       pages: Array
     },
 
-    created() {
-      console.log(this.pages)
-    },
-
     components: {
       BlogPostPage
     }

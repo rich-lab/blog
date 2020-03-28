@@ -3,7 +3,7 @@ sidebar: auto
 date: 2019-12-21
 author: pigcan
 hero: https://user-images.githubusercontent.com/848515/71269481-6da1ca00-238a-11ea-8a68-0d2511ec97aa.png
-summary: 这是一篇关于 React Hooks 的深度好文，阅读 & 理解需要一定时间，大家可以先收藏，再慢慢看。
+summary: 玄寂结合他在蚂蚁多年的构建基础技术的思考，及当下的机遇和挑战，慢慢推演到如何实现 Gravity 这个跑在浏览器中的构建工具
 ---
 
 # 基于浏览器的实时构建探索之路
@@ -15,7 +15,6 @@ summary: 这是一篇关于 React Hooks 的深度好文，阅读 & 理解需要�
 ## 自我介绍
 
 首先先自我介绍下，我是来自 [RichLab 花呗借呗前端团队](https://www.yuque.com/richlab/join-us/invitation) 的同学。在公司大家喊我玄寂，生活中大家称呼我 pigcan 或者猪罐头。除了是一个程序员，我现在也在尝试做一名 [YouTuber](https://www.youtube.com/channel/UCXSC6NZo2q8N2OzvXxp2c1A?view_as=subscriber) 和 [up 主](https://space.bilibili.com/23044280)，也在[微信公众号](https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=Mzg2NTA1Nzg1OQ==&scene=124#wechat_redirect)中分享我的生活，我自己的方式践行快乐工作，认真生活。
-
 
 ## 体感案例
 

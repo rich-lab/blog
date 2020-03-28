@@ -4,25 +4,6 @@
       <div class="blog-layout">
         <BlogBlockLayout :pages="pages"/>
         <BlogSimpleLayout :pages="pages"/>
-        <!--<section class="rest-posts">-->
-        <!--<router-link-->
-        <!--v-for="page in $pagination.pages"-->
-        <!--:to="page.path"-->
-        <!--class="blog-post"-->
-        <!--:style="{-->
-        <!--backgroundImage: `url(${page.frontmatter.hero})`-->
-        <!--}"-->
-        <!--&gt;-->
-        <!--<div class="post-overlay"></div>-->
-        <!--<div class="post-info">-->
-        <!--<span-->
-        <!--class="post-title"-->
-        <!--&gt;-->
-        <!--{{ page.title }}-->
-        <!--</span>-->
-        <!--</div>-->
-        <!--</router-link>-->
-        <!--</section>-->
       </div>
       <Pagination v-if="$pagination.length > 1"/>
     </template>
@@ -41,11 +22,6 @@
       Pagination,
       BlogBlockLayout,
       BlogSimpleLayout,
-    },
-
-    created() {
-      // console.log(this.$pagination)
-      // console.log(this.$pagination.pages)
     },
 
     computed: {
@@ -84,12 +60,10 @@
       display none
     }
   }
-
+  
   @media (max-width: $MQMobile) {
     .blog-block-layout {
       display none
     }
   }
-  
-  
 </style>

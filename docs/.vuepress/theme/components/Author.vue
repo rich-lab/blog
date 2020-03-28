@@ -1,26 +1,26 @@
 <template>
-  <div
-    class="author"
-    ref="author"
-  >
-    <span class="type-text">{{ typeText }}</span>
-    <a
-      class="author-image"
-      :href="`https://github.com/${name}`"
-      target="_blank"
+  <div ref="author" class="authors">
+    <div
+      v-for="author in authors"
+      class="author"
     >
-      <img :src="$withBase(`/authors/${name}.png`)" alt="">
-    </a>
+      <span class="type-text">{{ author.text }}</span>
+      <a
+        class="author-image"
+        :href="`https://github.com/${author.person}`"
+        target="_blank"
+      >
+        <img
+          :src="$withBase(`/authors/${author.person}.png`)"
+          :alt="author.person"
+        >
+      </a>
+    </div>
   </div>
 </template>
 
 <script>
   export default {
-    props: [
-      'name',
-      'type'
-    ],
-
     mounted() {
       const target = document.querySelector('.theme-default-content h1 .author')
       if (!target) {
@@ -30,18 +30,42 @@
     },
 
     computed: {
-      typeText() {
-        return this.type === 'translation'
+      authors() {
+        return [{
+          person: this.frontmatter.author,
+          text: this.authorText,
+        }, {
+          person: this.frontmatter.revisor,
+          text: this.revisionText,
+        }].filter(i => i.person)
+      },
+
+      frontmatter() {
+        return this.$page.frontmatter || {}
+      },
+
+      authorText() {
+        return this.frontmatter.type === 'translation'
           ? 'Translated by'
           : 'Author'
+      },
+
+      revisionText() {
+        return 'Revised by'
       }
-      // 'revised by'
     }
   }
 </script>
 
 <style lang="stylus">
+  .authors {
+    display flex
+    align-items flex-end
+    justify-content flex-end
+  }
+  
   .author {
+    margin-left 1.5rem
     text-align right
     display: flex;
     justify-content: flex-end;
@@ -52,6 +76,7 @@
     display: block;
     width: 40px;
     height: 40px;
+    box-shadow 0px 0px 5px 0px rgba(132, 132, 132, 0.2);
     border-radius: 50%;
     overflow: hidden;
     display inline-block;

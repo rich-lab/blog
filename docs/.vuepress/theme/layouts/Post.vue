@@ -1,11 +1,7 @@
 <template>
   <ParentLayout class="layout-post">
     <template slot="page-top">
-      <Author
-        v-if="$page.frontmatter && $page.frontmatter.author"
-        :name="$page.frontmatter.author"
-        :type="$page.frontmatter.type"
-      />
+      <Author/>
     </template>
   </ParentLayout>
 </template>
