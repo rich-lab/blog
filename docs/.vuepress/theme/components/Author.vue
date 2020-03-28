@@ -62,11 +62,18 @@
     display flex
     align-items flex-end
     justify-content flex-end
+    
+    @media (max-width: $MQMobile) {
+      display block
+      .author {
+        margin-top: 1rem
+        margin-left 0
+      }
+    }
   }
   
   .author {
     margin-left 1.5rem
-    text-align right
     display: flex;
     justify-content: flex-end;
     align-items: center;
