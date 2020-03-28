@@ -1,20 +1,22 @@
 <template>
-  <div ref="author" class="authors">
-    <div
-      v-for="author in authors"
-      class="author"
-    >
-      <span class="type-text">{{ author.text }}</span>
-      <a
-        class="author-image"
-        :href="`https://github.com/${author.person}`"
-        target="_blank"
+  <div class="author-wrapper">
+    <div ref="author" class="authors">
+      <div
+        v-for="author in authors"
+        class="author"
       >
-        <img
-          :src="$withBase(`/authors/${author.person}.png`)"
-          :alt="author.person"
+        <span class="type-text">{{ author.text }}</span>
+        <a
+          class="author-image"
+          :href="`https://github.com/${author.person}`"
+          target="_blank"
         >
-      </a>
+          <img
+            :src="$withBase(`/authors/${author.person}.png`)"
+            :alt="author.person"
+          >
+        </a>
+      </div>
     </div>
   </div>
 </template>
@@ -58,6 +60,10 @@
 </script>
 
 <style lang="stylus">
+  .author-wrapper {
+    display none;
+  }
+  
   .authors {
     display flex
     align-items flex-end
