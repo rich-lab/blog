@@ -7,7 +7,7 @@
     <div class="post-overlay"></div>
     <div class="post-info">
       <span class="post-title">{{ apage.title }}</span><br>
-      <span class="post-summary">{{ apage.frontmatter.summary }}</span>
+      <span class="post-description">{{ apage.frontmatter.description }}</span>
     </div>
   </router-link>
 </template>
@@ -80,7 +80,7 @@
       transition color 0.3s
     }
     
-    .post-summary {
+    .post-description {
       letter-spacing 0.5px
       display inline-block
       margin-top 1rem

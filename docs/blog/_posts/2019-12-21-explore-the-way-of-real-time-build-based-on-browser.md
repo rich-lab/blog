@@ -3,7 +3,7 @@ sidebar: auto
 date: 2019-12-21
 author: pigcan
 hero: https://user-images.githubusercontent.com/848515/71269481-6da1ca00-238a-11ea-8a68-0d2511ec97aa.png
-summary: 玄寂结合他在蚂蚁多年的构建基础技术的思考，及当下的机遇和挑战，慢慢推演到如何实现 Gravity 这个跑在浏览器中的构建工具
+description: 玄寂结合他在蚂蚁多年的构建基础技术的思考，及当下的机遇和挑战，慢慢推演到如何实现 Gravity 这个跑在浏览器中的构建工具
 ---
 
 # 基于浏览器的实时构建探索之路

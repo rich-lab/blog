@@ -5,7 +5,7 @@ author: ulivz
 revisor: jothy1023
 type: translation
 hero: /sddefault.jpg
-summary: Webpack 5 新特性 —— Module Federation, 让 JavaScript 应用得以在客户端或服务器上动态运行另一个 bundle 或者 build 的代码。
+description: Webpack 5 新特性 —— Module Federation, 让 JavaScript 应用得以在客户端或服务器上动态运行另一个 bundle 或者 build 的代码。
 ---
 
 # Webpack 5 Module Federation: JavaScript 架构的变革者
