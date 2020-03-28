@@ -83,6 +83,9 @@ module.exports = {
   plugins: [
     'cat',
     'code-copy',
+    ['sitemap', {
+      hostname: 'https://richlab.design/',
+    }],
     // ref: https://github.com/webmasterish/vuepress-plugin-feed
     ['feed', {
       canonical_base: 'https://richlab.design/',
