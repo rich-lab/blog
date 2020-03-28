@@ -31,6 +31,7 @@
       />
       <SearchBox v-else-if="$site.themeConfig.search !== false && $page.frontmatter.search !== false"/>
       <NavLinks class="can-hide"/>
+      <RSS/>
     </div>
   </header>
 </template>
@@ -40,9 +41,10 @@
   import SearchBox from '@SearchBox'
   import SidebarButton from '@theme/components/SidebarButton.vue'
   import NavLinks from '@theme/components/NavLinks.vue'
+  import RSS from './RSS'
 
   export default {
-    components: { SidebarButton, NavLinks, SearchBox, AlgoliaSearchBox },
+    components: { SidebarButton, NavLinks, SearchBox, AlgoliaSearchBox, RSS },
 
     data() {
       return {
@@ -120,6 +122,7 @@
       right $navbar-horizontal-padding
       top $navbar-vertical-padding
       display flex
+      align-items center
       
       .search-box
         flex: 0 0 auto

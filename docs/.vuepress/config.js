@@ -82,6 +82,19 @@ module.exports = {
    */
   plugins: [
     'cat',
+    // ref: https://github.com/webmasterish/vuepress-plugin-feed
+    ['feed', {
+      canonical_base: 'https://richlab.design/',
+      feeds: {
+        rss2: { enable: true },
+        atom1: { enable: false },
+        json1: { enable: false },
+      },
+      posts_directories: [
+        '/blog/_posts',
+        '/translations/_posts'
+      ]
+    }],
     ['@vuepress/google-analytics', {
       ga: 'UA-128189152-2'
     }],

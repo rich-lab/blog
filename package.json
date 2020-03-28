@@ -24,6 +24,7 @@
     "vuepress": "^1.4.0",
     "vuepress-plugin-cat": "^1.0.3",
     "vuepress-plugin-comment": "^0.7.3",
-    "vuepress-plugin-dynamic-base": "^0.1.1"
+    "vuepress-plugin-dynamic-base": "^0.1.1",
+    "vuepress-plugin-feed": "^0.1.8"
   }
 }
