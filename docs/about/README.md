@@ -11,7 +11,7 @@ Hello，欢迎来到 **RichLab · 荔枝实验室** 的空间，我们是一群�
 
 **恩，做这个站点的初衷是 “表达”， 我们期望能够创造更多的 “连接”。**
 
-接下来，你可以移步 [博客](../blog/README.md)，也可以在下面了解更多关于我们的消息：
+接下来，你可以移步 [博客](../blog/) 或者我们的 [翻译专区](../translations/)，也可以在下面了解更多关于我们的消息：
 
 - [知乎专栏](https://zhuanlan.zhihu.com/richlab)
 - [语雀](https://www.yuque.com/richlab)
