@@ -81,6 +81,7 @@ module.exports = {
    * Apply plugins，ref：https://v1.vuepress.vuejs.org/zh/plugin/
    */
   plugins: [
+    'cat',
     ['@vuepress/google-analytics', {
       ga: 'UA-128189152-2'
     }],
