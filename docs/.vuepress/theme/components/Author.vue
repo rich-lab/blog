@@ -35,6 +35,7 @@
           ? 'Translated by'
           : 'Author'
       }
+      // 'revised by'
     }
   }
 </script>
