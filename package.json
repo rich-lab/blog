@@ -20,6 +20,7 @@
     "@vuepress/plugin-google-analytics": "^1.4.0",
     "@vuepress/plugin-html-redirect": "^0.1.2",
     "@vuepress/plugin-medium-zoom": "^1.4.0",
+    "lodash.shuffle": "^4.2.0",
     "lodash.throttle": "^4.1.1",
     "vuepress": "^1.4.0",
     "vuepress-plugin-cat": "^1.0.3",

@@ -17,6 +17,7 @@
         <!--</div>-->
       <!--</div>-->
       <Comments />
+      <slot name="page-bottom"></slot>
     </div>
   </ParentLayout>
 </template>
