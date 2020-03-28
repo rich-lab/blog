@@ -51,6 +51,10 @@ module.exports = {
         link: '/blog/'
       },
       {
+        text: 'Translations',
+        link: '/translations/'
+      },
+      {
         text: 'Github',
         link: 'https://github.com/rich-lab'
       },
@@ -79,6 +83,11 @@ module.exports = {
   plugins: [
     '@vuepress/plugin-back-to-top',
     '@vuepress/plugin-medium-zoom',
+    [
+      '@vuepress/html-redirect', {
+      countdown: 0
+    }
+    ],
     ['@vuepress-reco/comments', {
       solution: 'valine',
       options: {
@@ -110,6 +119,20 @@ module.exports = {
             dirname: 'blog/_posts',
             // Path of the `entry page` (or `list page`)
             path: '/blog/',
+            itemPermalink: '/blog/:year/:month/:day/:slug',
+            // layout: 'Layout',
+            pagination: {
+              lengthPerPage: 20,
+            },
+          },
+          {
+            // Unique ID of current classification
+            id: 'translations',
+            // Target directory
+            dirname: 'translations/_posts',
+            // Path of the `entry page` (or `list page`)
+            path: '/translations/',
+            itemPermalink: '/translations/:year/:month/:day/:slug',
             // layout: 'Layout',
             pagination: {
               lengthPerPage: 20,

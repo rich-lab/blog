@@ -2,6 +2,7 @@
 sidebar: auto
 date: 2020-3-27
 author: ulivz
+revisor: jothy1023
 type: translation
 hero: /sddefault.jpg
 summary: Webpack 5 新特性 —— Module Federation, 让 JavaScript 应用得以在客户端或服务器上动态运行另一个 bundle 或者 build 的代码。
@@ -60,8 +61,6 @@ Module Federation 使 JavaScript 应用得以从另一个 JavaScript 应用中�
 </Highlight>
 
 这些应用都是 **bidirectional（双向的） hosts**. 所有在你修改路由或者移动应用时率先加载的应用都将成为 host, 它会像你实现 dynamic imports 一样加载 federated modules. 不过，如果你要刷新页面，则任何在之后的 load 中率先启动的应用，都将成为一个 host。
-
-<!--     <small>译者注：</small><br> -->
 
 <CardLink>
   <a target="_blank" href="https://twitter.com/kmsaldana1/status/1234551387398103043?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed&ref_url=https%3A%2F%2Fcdn.embedly.com%2Fwidgets%2Fmedia.html%3Ftype%3Dtext%252Fhtml%26key%3Da19fcc184b9711e1b4764040d3dc5c07%26schema%3Dtwitter%26url%3Dhttps%253A%2F%2Ftwitter.com%2Fkmsaldana1%2Fstatus%2F1234551387398103043%26image%3Dhttps%253A%2F%2Fi.embed.ly%2F1%2Fimage%253Furl%253Dhttps%25253A%25252F%25252Fpbs.twimg.com%25252Fprofile_images%25252F1016423846809722880%25252FJyBot7JY_400x400.jpg%2526key%253Da19fcc184b9711e1b4764040d3dc5c07">

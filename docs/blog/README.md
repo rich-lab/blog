@@ -1,3 +1,0 @@
-# Blog
-
-On the way.

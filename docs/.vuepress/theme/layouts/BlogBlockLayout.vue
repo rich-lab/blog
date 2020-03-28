@@ -87,7 +87,7 @@
         &:nth-child(1) {
           flex-grow 1
           margin-right: $semiCollapse
-  
+          
           .post-overlay {
             background-color #111
           }
@@ -96,7 +96,7 @@
         &:nth-child(2) {
           margin 0 $semiCollapse
           flex-grow 2
-  
+          
           .post-overlay {
             background-color #222
           }
@@ -105,7 +105,7 @@
         &:nth-child(3) {
           margin-left $semiCollapse
           flex-grow 1
-  
+          
           .post-overlay {
             background-color #000
           }
