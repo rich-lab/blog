@@ -180,7 +180,7 @@ export default {
             "越野很多时候，有很大一部分情况是没有退路的，你最后挑战的并不是车，而是自己，人有太多的心理障碍和对未知的恐惧，很容易让你想要放弃，然而在越野中你会发现，你碰到了实在过不去的砍，大家会想尽一切办法来帮助你，搬石头，拉绞盘，做指挥，等等等等，而你要做的是咬咬牙关，或许就成功了，这是一种很纯粹的快乐。",
           quote: "VLOG 博主、越野玩家 玄寂",
           image:
-            "https://gw.alipayobjects.com/zos/bmw-prod/3cf20a47-a81e-45e0-816c-fa3f9d5640b1.webp"
+            "https://gw.alipayobjects.com/mdn/rms_89e39d/afts/img/A*kQhJRozy3IYAAAAAAAAAAABkARQnAQ"
         },
         // 完颜
         {
