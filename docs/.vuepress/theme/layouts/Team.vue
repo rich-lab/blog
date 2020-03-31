@@ -136,7 +136,7 @@
 
     <section class="container mx-auto text-center">
       <h1 class="text-5xl">成为有趣好玩的一部分</h1>
-      <p>如果你想成为我们的一份子，请点击 <a :href="$withBase('/blog/2019/12/02/invitation/')">此处</a>。</p>
+      <p>如果你想成为我们的一份子，请点击 <u><a :href="$withBase('/blog/2019/12/02/invitation/')">此处</a></u>。</p>
       <p>我们期待一个独一无二的你。</p>
     </section>
 
