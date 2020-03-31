@@ -60,7 +60,7 @@
       height: 100%
       // background-image: linear-gradient(to top, #000, #333, #aaa);
       background-color: #000;
-      opacity: 0.7;
+      opacity: 0.6;
       z-index 1
       transition all 0.3s
     }
@@ -99,7 +99,7 @@
     
     &:hover {
       .post-overlay {
-        opacity: 0.6;
+        opacity: 0.5;
       }
       
       .post-title {
