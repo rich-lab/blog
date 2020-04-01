@@ -62,13 +62,17 @@ module.exports = {
         link: '/translations/'
       },
       {
+        text: 'Team',
+        link: '/team/'
+      },
+      {
         text: 'Github',
         link: 'https://github.com/rich-lab'
       },
-      {
-        text: 'Artworks',
-        link: 'https://github.com/rich-lab/art/'
-      }
+      // {
+      //   text: 'Artworks',
+      //   link: 'https://github.com/rich-lab/art/'
+      // }
     ],
     sidebar: {
       '/guide/': [

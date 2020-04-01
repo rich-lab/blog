@@ -96,6 +96,10 @@
     vertical-align center !important
     margin-left 10px
     
+    img {
+      max-height none
+    }
+    
     &::after {
       display none
     }
